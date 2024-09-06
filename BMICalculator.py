@@ -98,21 +98,21 @@ def BMICalculator():
    
    # Determine the weight category based on the BMI value
    if bmi <= 16:
-      print("Severe Thinness")
+      print("\tSevere Thinness")
    elif bmi <= 17:
-      print("Moderate Thinness")
+      print("\tModerate Thinness")
    elif bmi <= 18.5:
-      print("Mild Thinness")
+      print("\tMild Thinness")
    elif bmi <= 25:
-      print("Normal")
+      print("\tNormal")
    elif bmi <= 30:
-      print("Overweight")
+      print("\tOverweight")
    elif bmi <= 35:
-      print("Obese Class I")
+      print("\tObese Class I")
    elif bmi <= 40:
-      print("Obese Class II")
+      print("\tObese Class II")
    else:
-      print("Obese Class III")
+      print("\tObese Class III")
 
 
 if __name__=='__main__':
