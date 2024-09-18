@@ -82,29 +82,31 @@ def WeeklyPaymentCalculator():
     try:
         # Ensure there are enough command-line arguments
         if len(sys.argv) != 4:
-            print("Usage: WeeklyPaymentCalculator.py <working_hours> <normal_rate> <overtime_rate>")
+            print("Your input is invalid!")
             sys.exit(1)
 
+        # Parse the command line arguments
         working_hours = int(sys.argv[1])
         normal_rate = float(sys.argv[2])
         overtime_rate = float(sys.argv[3])
+
+        # Validate working hours
+        if working_hours < 0 or working_hours > 168:
+            print("Your input is invalid!")
+            sys.exit(1)
 
         # Calculate the payment
         if working_hours <= 40:
             normal_payment = normal_rate * working_hours
             overtime_payment = 0
-        elif working_hours < 168:
-            # 168 Hours is the limit as that is the most anyone can work within a week. 24x7
+        else:
             normal_payment = normal_rate * 40
             overtime_payment = overtime_rate * (working_hours - 40)
-        else:
-            print("Your input is invalid!")
-            sys.exit(1)
 
         total_payment = normal_payment + overtime_payment
 
-        # Print the results
-        print(f"Normal Salary: {normal_payment:.2f}, Extra Salary: {overtime_payment:.2f}, Total Salary: {total_payment:.2f}")
+        # Print the results with the required precision
+        print(f"Normal Salary:{normal_payment:.2f}, Extra Salary:{overtime_payment:.2f}, Total Salary:{total_payment:.2f}")
 
     except ValueError:
         print("Your input is invalid!")
