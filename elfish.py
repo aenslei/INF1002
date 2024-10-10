@@ -21,25 +21,31 @@ Running example:
 '''
 
 import sys
+# write your code here
+# you can use sys.argv[1] to get the first input argument.
+# sys.argv[2] is the second argument, etc.
 
-def is_elfish(word, letters="elf"):
-     if not letters:
+def is_elfish(user_input, elfish_letters):
+     if not elfish_letters:
           return True
-     if not word:
-          return False
-     if word[0] in letters:   
-          letters = letters.replace(word[0], "")
-     return is_elfish(word[1:], letters)
+     
+     if elfish_letters[0] in user_input:
+          return is_elfish(user_input, elfish_letters[1:])
+     
+     return False
 
-def elfish():
-     if len(sys.argv) != 2:
-          print("Usage: python elfish.py <word>")
-          return
-     word = sys.argv[1]
-     if is_elfish(word):
-          print(f"{word} is one elfish word!")
+
+def elfish():     
+     user_input = sys.argv[1].lower()
+     elfish_letters = ['e', 'f' , 'l']
+     
+     if is_elfish(user_input, elfish_letters):
+          print (f"{user_input} is one elfish word!")
+
      else:
-          print(f"{word} is not an elfish word!")
+          print(f"{user_input} is not an elfish word!")
 
-if __name__ == '__main__':
+
+if __name__=='__main__':
      elfish()
+      
