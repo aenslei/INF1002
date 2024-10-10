@@ -21,12 +21,13 @@ Running example:
 '''
 
 import sys
+
 def is_elfish(word, letters="elf"):
      if not letters:
           return True
      if not word:
           return False
-     if word[0] in letters:
+     if word[0] in letters:   
           letters = letters.replace(word[0], "")
      return is_elfish(word[1:], letters)
 
@@ -40,7 +41,5 @@ def elfish():
      else:
           print(f"{word} is not an elfish word!")
 
-
-if __name__=='__main__':
+if __name__ == '__main__':
      elfish()
-      
