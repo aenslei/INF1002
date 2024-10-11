@@ -35,7 +35,7 @@ Task Description:
     d.)	Develop one program to allow users to input the sequence of the sales number and 
         the scale factor. Then call all the functions to show use the scaled data, sorting 
         result and good sales. 
- 
+
 Note: 
     1.	For functions a, b and c, you can optimize the function body with at most 2 lines 
         codes by using filter, map, reduce, sorted and lambda expression. See how short 
@@ -44,7 +44,7 @@ Note:
 
 
 Running example: 
-    C:\INF1002\Lab5\Sales> python sales.py 10,20,30,40,50,60 2
+    C:\INF1002\Lab5\Sales> python SalesAnalytics.py 10,20,30,40,50,60 2
     The scaled number is:  [20, 40, 60, 80, 100, 120] The sorted sales numbers are:  [10, 20, 30, 40, 50, 60] The good sales numbers are:  [40, 50, 60]
 '''
 import sys
@@ -65,7 +65,7 @@ def SalesAnalytics():
         return
     
     sales_numbers = list(map(int, sys.argv[1].split(',')))
-    scale_factor = float(sys.argv[2])
+    scale_factor = int(sys.argv[2])
     
     scaled_numbers = scale(sales_numbers, scale_factor)
     sorted_numbers = sort(sales_numbers)
