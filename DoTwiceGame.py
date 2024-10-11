@@ -63,11 +63,11 @@ def DoTwiceGame():
             return
 
       if operation == 1:
-            result = doTwice(double, number)
+            result = int(doTwice(double, number))
       elif operation == 2:
-            result = doTwice(square, number)
+            result = int(doTwice(square, number))
       elif operation == 3:
-            result = doTwice(cube, number)
+            result = int(doTwice(cube, number))
       else:
             print("It cannot be supported!")
             return
